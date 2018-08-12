@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2FBB4987-0C95-41EA-B2BC-039094223FDB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PerformanceEvaluationPortal.WebClient</RootNamespace>
+    <AssemblyName>PerformanceEvaluationPortal.WebClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.component.html" />
+    <Content Include="app\common\menu.component.html" />
+    <Content Include="app\login\alert.component.html" />
+    <Content Include="app\login\login.component.html" />
+    <Content Include="app\notifications\notification.component.html" />
+    <Content Include="app\performanceevaluations\performance-evaluation-acknowledge.component.html" />
+    <Content Include="app\performanceevaluations\performance-evaluation-details.component.html" />
+    <Content Include="app\performanceevaluations\performance-evaluation-edit.component.html" />
+    <Content Include="app\performanceevaluations\performance-evaluation.component.html" />
+    <Content Include="app\templates\template-details.component.html" />
+    <Content Include="app\templates\template-save.component.html" />
+    <Content Include="app\templates\templates.component.html" />
+    <Content Include="app\users\application-user-details.component.html" />
+    <Content Include="app\users\application-user-manager-panel.component.html" />
+    <Content Include="app\users\application-user-reviewer-panel.component.html" />
+    <Content Include="app\users\application-user-save.component.html" />
+    <Content Include="app\users\application-user-start-page.component.html" />
+    <Content Include="app\users\application-user.component.html" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\hoverex-all.css" />
+    <Content Include="assets\css\images\018-Subtle-light-patterns-Vol04.png" />
+    <Content Include="assets\css\images\019-Subtle-light-patterns-Vol04.png" />
+    <Content Include="assets\css\images\Blend.png" />
+    <Content Include="assets\css\images\headerLogo.png" />
+    <Content Include="assets\css\images\Office Background Office Backgrounds.jpg" />
+    <Content Include="assets\css\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="assets\css\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="assets\css\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="assets\css\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="assets\css\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="assets\css\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="assets\css\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="assets\css\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="assets\css\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="assets\css\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="assets\css\images\prettyPhoto\default\loader.gif" />
+    <Content Include="assets\css\images\prettyPhoto\default\sprite.png" />
+    <Content Include="assets\css\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="assets\css\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="assets\css\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="assets\css\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="assets\css\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="assets\css\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="assets\css\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="assets\css\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="assets\css\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="assets\css\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="assets\css\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="assets\css\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="assets\css\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="assets\css\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="assets\css\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="assets\css\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="assets\css\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="assets\css\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="assets\css\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="assets\css\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="assets\css\images\Y3xeB.png" />
+    <Content Include="assets\css\prettyPhoto.css" />
+    <Content Include="assets\css\signin.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="assets\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="assets\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\img\agency.jpg" />
+    <Content Include="assets\img\browser.png" />
+    <Content Include="assets\img\clients\client01.png" />
+    <Content Include="assets\img\clients\client02.png" />
+    <Content Include="assets\img\clients\client03.png" />
+    <Content Include="assets\img\clients\client04.png" />
+    <Content Include="assets\img\contact.jpg" />
+    <Content Include="assets\img\portfolio\portfolio_01.jpg" />
+    <Content Include="assets\img\portfolio\portfolio_02.jpg" />
+    <Content Include="assets\img\portfolio\portfolio_03.jpg" />
+    <Content Include="assets\img\portfolio\portfolio_04.jpg" />
+    <Content Include="assets\img\portfolio\portfolio_05.jpg" />
+    <Content Include="assets\img\portfolio\portfolio_06.jpg" />
+    <Content Include="assets\img\portfolio\portfolio_07.jpg" />
+    <Content Include="assets\img\portfolio\portfolio_08.jpg" />
+    <Content Include="assets\img\portfolio\portfolio_09.jpg" />
+    <Content Include="assets\img\portfolio\portfolio_10.jpg" />
+    <Content Include="assets\img\portfolio\single01.jpg" />
+    <Content Include="assets\img\portfolio\single02.jpg" />
+    <Content Include="assets\img\portfolio\single03.jpg" />
+    <Content Include="assets\img\post01.jpg" />
+    <Content Include="assets\img\post02.jpg" />
+    <Content Include="assets\img\post03.jpg" />
+    <Content Include="assets\img\t-back.jpg" />
+    <Content Include="assets\img\team\download.jpg" />
+    <Content Include="assets\img\team\team01.jpg" />
+    <Content Include="assets\img\team\team02.jpg" />
+    <Content Include="assets\img\team\team03.jpg" />
+    <Content Include="assets\img\team\team04.jpg" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\jquery.hoverdir.js" />
+    <Content Include="assets\js\jquery.hoverex.min.js" />
+    <Content Include="assets\js\jquery.isotope.min.js" />
+    <Content Include="assets\js\jquery.prettyPhoto.js" />
+    <Content Include="assets\js\pdfmake.js" />
+    <Content Include="assets\js\pdfmake.min.js" />
+    <Content Include="assets\js\retina-1.1.0.js" />
+    <Content Include="assets\js\vfs_fonts.js" />
+    <Content Include="content\style.css" />
+    <Content Include="content\sweetalert2.css" />
+    <Content Include="package.json" />
+    <Content Include="assets\js\pdfmake.min.js.map" />
+    <Content Include="assets\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="assets\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\core.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\list.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\path.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="assets\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="assets\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="assets\font-awesome-4.7.0\scss\_variables.scss" />
+    <None Include="Properties\PublishProfiles\aplab12performanceevaluationportal - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\aplab12performanceevaluationportal - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\aplab12performanceevaluationportal - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\aplab12performanceevaluationportal - Web Deploy %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\aplab12performanceevaluationportal - Web Deploy %284%29.pubxml" />
+    <None Include="Properties\PublishProfiles\aplab12performanceevaluationportal - Web Deploy.pubxml" />
+    <None Include="scripts\jquery-3.1.1-vsdoc.js" />
+    <Content Include="scripts\jquery-3.1.1.js" />
+    <Content Include="scripts\jquery-3.1.1.min.js" />
+    <Content Include="scripts\jquery-3.1.1.slim.js" />
+    <Content Include="scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="scripts\sweetalert2.min.js" />
+    <Content Include="tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="index.html" />
+    <Content Include="styles.css" />
+    <Content Include="systemjs.config.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app\app.component.spec.ts" />
+    <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\app.routing.ts" />
+    <TypeScriptCompile Include="app\can-deactivate-guard.service.ts" />
+    <TypeScriptCompile Include="app\common\global-events-manager.ts" />
+    <TypeScriptCompile Include="app\common\http.client.ts" />
+    <TypeScriptCompile Include="app\common\menu.component.ts" />
+    <TypeScriptCompile Include="app\dialog.service.ts" />
+    <TypeScriptCompile Include="app\jobpositions\job-position.ts" />
+    <TypeScriptCompile Include="app\jobpositions\job-position.service.ts" />
+    <TypeScriptCompile Include="app\jobpositions\job-position.component.ts" />
+    <TypeScriptCompile Include="app\jobtitles\job-title.component.ts" />
+    <TypeScriptCompile Include="app\jobtitles\job-title.service.ts" />
+    <TypeScriptCompile Include="app\jobtitles\job-title.ts" />
+    <TypeScriptCompile Include="app\login\alert.component.ts" />
+    <TypeScriptCompile Include="app\login\alert.service.ts" />
+    <TypeScriptCompile Include="app\login\auth.guard.ts" />
+    <TypeScriptCompile Include="app\login\auth.service.ts" />
+    <TypeScriptCompile Include="app\login\login.component.ts" />
+    <TypeScriptCompile Include="app\login\login.guard.ts" />
+    <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\my-globals.ts" />
+    <TypeScriptCompile Include="app\notifications\notification.component.ts" />
+    <TypeScriptCompile Include="app\notifications\notification.service.ts" />
+    <TypeScriptCompile Include="app\notifications\notification.ts" />
+    <TypeScriptCompile Include="app\performanceevaluations\performance-evaluation-acknowledge.component.ts" />
+    <TypeScriptCompile Include="app\performanceevaluations\performance-evaluation-details.component.ts" />
+    <TypeScriptCompile Include="app\performanceevaluations\performance-evaluation-edit.component.ts" />
+    <TypeScriptCompile Include="app\performanceevaluations\performance-evaluation.component.ts" />
+    <TypeScriptCompile Include="app\performanceevaluations\performance-evaluation.service.ts" />
+    <TypeScriptCompile Include="app\performanceevaluations\performance-evaluation.ts" />
+    <TypeScriptCompile Include="app\skills\skill-component.ts" />
+    <TypeScriptCompile Include="app\skills\skill.service.ts" />
+    <TypeScriptCompile Include="app\skills\skill.ts" />
+    <TypeScriptCompile Include="app\templatedurations\template-duration.component.ts" />
+    <TypeScriptCompile Include="app\templatedurations\template-duration.service.ts" />
+    <TypeScriptCompile Include="app\templatedurations\template-duration.ts" />
+    <TypeScriptCompile Include="app\templates\template-details.component.ts" />
+    <TypeScriptCompile Include="app\templates\template-save.component.ts" />
+    <TypeScriptCompile Include="app\templates\template.service.ts" />
+    <TypeScriptCompile Include="app\templates\template.ts" />
+    <TypeScriptCompile Include="app\templates\templates.component.ts" />
+    <TypeScriptCompile Include="app\users\application-user-details.component.ts" />
+    <TypeScriptCompile Include="app\users\application-user-manager-panel.component.ts" />
+    <TypeScriptCompile Include="app\users\application-user-reviewer-panel.component.ts" />
+    <TypeScriptCompile Include="app\users\application-user-save.component.ts" />
+    <TypeScriptCompile Include="app\users\application-user-start-page.component.ts" />
+    <TypeScriptCompile Include="app\users\application-user.component.ts" />
+    <TypeScriptCompile Include="app\users\application-user.service.ts" />
+    <TypeScriptCompile Include="app\users\application-user.ts" />
+    <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\signalr\signalr-1.0.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\signalr\signalr.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Web.config" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.1.1.min.map" />
+    <None Include="Web.Debug.config" />
+    <None Include="Web.Release.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59355</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55277/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

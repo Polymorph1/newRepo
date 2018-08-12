@@ -1,0 +1,74 @@
+﻿
+
+
+<div class="container" [@animateIn]="'in'" *ngIf="user">
+    <div class="col-sm-5" >
+        <div class="well well-lg">
+            <h4>
+                <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+                <strong>{{user.firstName}}&nbsp;{{user.lastName}}</strong>
+            </h4>
+            <strong>{{user.jobTitle.name}},</strong>&nbsp;{{user.jobPosition.name}}
+        </div>
+    </div>        
+    <div class="col-sm-7">
+        <div *ngIf="peConsultant">
+            <div class="list-group-item active"><strong> My Performance Evaluations</strong></div>
+            <div class="list-group">
+                <div *ngFor="let pe of peConsultant" class="list-group-item ">
+                    <h4>{{pe.consultantFirstName}}&nbsp;{{pe.consultantLastName}}</h4>
+                    <h5 class="text-muted">{{pe.consultantJobTitle}},&nbsp;{{pe.consultantJobPosition}}</h5>
+                    <h5><strong>Reviewed by: {{pe.reviewerFirstName}}&nbsp;{{pe.reviewerLastName}}</strong></h5>
+                    <div class="text-right">
+                        <button class="btn-create-edit-details" (click)="acknowledgePe(pe.id)"><strong>Acknowledge</strong></button>
+                    </div>
+                </div>
+                <div *ngIf="peConsultant.length==0" class="list-group-item ">
+                    <i class="glyphicon glyphicon-info-sign" aria-hidden="true" style="color:#b1cd01"></i> 
+                    No performance evaluations.
+                </div>
+            </div>
+        </div>
+        <div *ngIf="peHistoryConsultant">
+            <div class="list-group-item active">
+                <div class="col-sm-6" style="margin-top:5px">
+                    <strong>My Performance Evaluations History</strong>
+                </div>
+                <div class="col-sm-offset-6">
+                    <input type="text" class="form-control empty" id="iconifield" placeholder="Search&hellip;" 
+                           #myInput [(ngModel)]="name" (input)="filterItem(myInput.value)">
+                </div>
+            </div>
+            <div class="list-group-history" *ngIf="peHistoryConsultant">
+                <div *ngFor="let pe of filteredPes" class="list-group-item ">
+                    <h4>{{pe.consultantFirstName}}&nbsp;{{pe.consultantLastName}}</h4>
+                    <h5 class="text-muted">{{pe.consultantJobTitle}},&nbsp;{{pe.consultantJobPosition}}</h5>
+                    <h5><strong>Reviewed by: {{pe.reviewerFirstName}}&nbsp;{{pe.reviewerLastName}}</strong></h5>
+                    <h5><strong>Date Submited: {{pe.dateSubmited | date: 'dd.MM.yyyy.'}}</strong></h5>
+                    <div class="text-right">
+                        <button class="btn-create-edit-details" (click)="readPe(pe.id)"><strong>Read</strong></button>
+                    </div>
+                </div>
+                <div *ngIf="filteredPes.length == 0 && peHistoryConsultant.length!=0" class="list-group-item ">
+                    No results found.
+                </div>
+                <div *ngIf="peHistoryConsultant.length==0" class="list-group-item ">
+                    <i class="glyphicon glyphicon-info-sign" aria-hidden="true" style="color:#b1cd01"></i> 
+                    Performance evaluation history is empty.
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+
+    
+
+    
+
+        
+    
+
+    
+
+   
+

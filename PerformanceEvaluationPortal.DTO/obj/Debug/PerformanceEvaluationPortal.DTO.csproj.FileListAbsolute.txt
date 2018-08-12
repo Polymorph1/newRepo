@@ -1,0 +1,13 @@
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\bin\Debug\PerformanceEvaluationPortal.DTO.dll
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\bin\Debug\PerformanceEvaluationPortal.DTO.pdb
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\bin\Debug\PerformanceEvaluationPortal.DomainModel.dll
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\bin\Debug\EntityFramework.dll
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\bin\Debug\PerformanceEvaluationPortal.DomainModel.pdb
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\bin\Debug\EntityFramework.xml
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\obj\Debug\PerformanceEvaluationPortal.DTO.csprojResolveAssemblyReference.cache
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\obj\Debug\PerformanceEvaluationPortal.DTO.dll
+C:\Code\APLab\PerformanceEvaluationPortal\PerformanceEvaluationPortal\PerformanceEvaluationPortal.DTO\obj\Debug\PerformanceEvaluationPortal.DTO.pdb

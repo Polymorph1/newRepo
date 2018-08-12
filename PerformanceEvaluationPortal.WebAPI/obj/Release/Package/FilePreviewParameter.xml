@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="aplab12performanceevaluationportalapi" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Code\\APLab\\PerformanceEvaluationPortal\\PerformanceEvaluationPortal\\PerformanceEvaluationPortal\.WebAPI\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Code\\APLab\\PerformanceEvaluationPortal\\PerformanceEvaluationPortal\\PerformanceEvaluationPortal\.WebAPI\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="PerformanceEvaluationPortal-Web.config Connection String" description="" value="Data Source=tcp:aplab12sql.database.windows.net,1433;Initial Catalog=PerformanceEvaluationPortal;User ID=aplab12user@aplab12sql.database.windows.net;Password=Pass4SQL" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Code\\APLab\\PerformanceEvaluationPortal\\PerformanceEvaluationPortal\\PerformanceEvaluationPortal\.WebAPI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PerformanceEvaluationPortal']/@connectionString" />
+  </parameter>
+</parameters>

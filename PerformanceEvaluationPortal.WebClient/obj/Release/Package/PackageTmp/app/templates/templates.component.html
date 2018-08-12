@@ -1,0 +1,96 @@
+﻿<div class="container" [@animateIn]="'in'">
+    <div *ngIf="templates" class="col-md-8 col-md-offset-2">
+
+        <div class="panel panel-default">
+            <div>
+                <input class="form-control" type="text" #myInput placeholder="Search template..." [(ngModel)]="name" (input)="filterItem(myInput.value)" id="asd">
+            </div>
+            <div class="panel-heading"><h4 class="text text-center">Templates in use</h4></div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let template of filteredTemplates | paginate: { itemsPerPage: 5, currentPage: p }">
+                        <td class="col-md-5"><a (click)="detailsTemplate(template)">{{template.name}}</a></td>
+
+                        <td *ngIf="template.canBeEdited">
+                            <div title="Template is used in Performance Evaluation" rel="tooltip">
+                                <button id="edit" [disabled]="template.canBeEdited" (click)="saveTemplate(template)" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit
+                                </button>
+                            </div>
+                        </td>
+
+                        <td *ngIf="!template.canBeEdited ">
+                            <button id="edit" [disabled]="template.canBeEdited" (click)="saveTemplate(template)" class="btn btn-default">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit
+                            </button>
+                        </td>
+
+                        <td *ngIf="template.canBeArchived">
+
+                            <div title="Template is attached to user" rel="tooltip">
+                                <button id="archive" [disabled]="template.canBeArchived" (click)="archiveTemplate(template)" class="btn btn-success">
+                                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Archive
+                                </button>
+                            </div>
+                        </td>
+                        <td *ngIf="!template.canBeArchived ">
+                            <button type="submit" class="btn btn-default" [disabled]="template.canBeArchived " (click)="archiveTemplate(template)">
+                                <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Archive
+                            </button>
+                        </td>
+
+                    </tr>              
+                </tbody>
+            </table>        
+        </div>
+
+        <pagination-controls style="cursor:pointer"  class="my-pagination" (pageChange)="p = $event" #api></pagination-controls>
+        <div>
+            <button (click)="saveTemplate()" class="btn btn-default "><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
+
+        </div>
+
+
+
+        <br />
+        <br />
+        <br />
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel panel-heading panel-success"><h4 class="text text-center">Archived templates</h4></div>
+            <!-- Table -->
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let template of archivedTemplates">
+                        <td class="col-md-5"><a (click)="detailsTemplate(template)">{{template.name}}</a></td>
+                        <td>
+                            <button (click)="restoreTemplate(template)" class="btn btn-success">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Restore
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<style>
+    input::-webkit-input-placeholder {
+        color: white;
+    }
+</style>

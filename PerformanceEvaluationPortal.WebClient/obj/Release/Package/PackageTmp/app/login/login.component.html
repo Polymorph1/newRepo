@@ -1,0 +1,38 @@
+﻿<div class="col-sm-12">
+    <div class="margin-top-50" [@loginState]="'in'">
+        <div style="margin-bottom:50px; text-align:center;font-family: 'Nunito Sans', sans-serif;font-size:50px;color: slategrey">
+            Performance Evaluation Portal
+        </div>
+
+        <div align="center">
+            <div class="col-sm-3 login-form-container col-centered">
+                <form class="form-signin" role="form" (submit)="login($event, username.value, password.value)">
+                    <h2 class="form-signin-heading">Sign In</h2>
+                    <h2 class="border-bottom-login-heading"></h2><br />
+                    <div id="message" hidden="hidden" class="alert alert-danger" role="alert">
+                        <strong>Error!</strong> Wrong username or password.
+                    </div>
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="text" #username id="username" class="form-control form-control-login" placeholder="Username" required autofocus style="margin-bottom: 7px;">
+                    </div>
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-lock"></i>
+                        <input type="password" #password id="inputPassword" class="form-control form-control-login" placeholder="Password" required>
+                    </div>
+                    <button class="btn-login" type="submit">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 margin-top-50">
+        <img src="https://s-media-cache-ak0.pinimg.com/originals/a2/1d/bf/a21dbf1494f81a82854467734671388f.jpg" width="100%" height="100%" />
+    </div>
+</div>
+
+
+
+
+
+
+

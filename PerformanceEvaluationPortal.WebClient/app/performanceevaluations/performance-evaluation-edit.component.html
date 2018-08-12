@@ -1,0 +1,82 @@
+﻿<div class="container pe-details" [@animateIn]="'in'" *ngIf="performanceEvaluation">
+    <div class="col-sm-12 text-center pe-details-title">PERFORMANCE EVALUATION REPORT</div>
+    <div class="col-sm-12">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2 text-right">
+            <p><strong>Employee Name: </strong></p>
+            <p><strong>Job Title: </strong></p>
+        </div>
+        <div class="col-sm-3 text">
+            <p>{{performanceEvaluation.consultantFirstName}}&nbsp;{{performanceEvaluation.consultantLastName}}</p>
+            <p>{{performanceEvaluation.consultantJobTitle.name}}</p>
+        </div>
+        <div class="col-sm-3 text-right">
+            <p><strong>Review Period: </strong></p>
+            <p><strong>Reviewer Name: </strong></p>
+        </div>
+        <div class="col-sm-3">
+            <p>{{performanceEvaluation.startDate | date: 'dd.MM.yyyy.'}} - {{performanceEvaluation.endDate | date: 'dd.MM.yyyy.'}}</p>
+            <p>{{performanceEvaluation.reviewerFirstName}}&nbsp;{{performanceEvaluation.reviewerLastName}}</p>
+        </div>
+    </div>
+    <form [formGroup]="form">
+        <div formArrayName="gradesandcomments" class="pe-center-align margin-top-250" *ngIf="performanceEvaluation.performanceEvaluationSkills.length!=0">
+            <h4 class="grey-lato">Performance evaluation skills</h4>
+            <div class="margin-top-40" *ngFor="let peSkill of performanceEvaluation.performanceEvaluationSkills; let i = index;">
+                <h4>&#8226; <strong>{{peSkill.skill.name}}</strong></h4>
+                <p class="text-justify font-lato">{{peSkill.skill.description}}</p>
+                <table class="table table-custom margin-top-20">
+                    <thead>
+                        <tr>
+                            <th>GRADE</th>
+                            <th>COMMENT</th>
+                        </tr>
+                    </thead>
+                    <tbody [formGroupName]="i">
+                        <tr>
+                            <td>
+                                <div class="dropdown">
+                                    <select class="form-control" [(ngModel)]="peSkill.grade" formControlName="grade">
+                                        <option value="E">Exceeds Expectations</option>
+                                        <option value="M">Meets Expectations</option>
+                                        <option value="N">Needs Improvement</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td class="text-justify">
+                                <textarea rows="5" cols="50" style="width:100%" value="{{peSkill.comment}}" formControlName="comment" [(ngModel)]="peSkill.comment"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-12 margin-top-40">
+            <div class="col-sm-6 text-left">
+                <div class="tooltip-wrapper">
+                    <button class="btn btn-default btn-save" (click)="goBack()"><i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i> Back</button>
+                </div>
+            </div>
+            <div class="col-sm-6 text-right">
+                <div class="tooltip-wrapper">
+                    <button type="button" #saveButton name="saveButton" class="btn btn-default btn-save" (click)="savePe()"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i> Save</button>
+                </div>
+                <div *ngIf="!form.valid" class="tooltip-wrapper"
+                     tooltip="All fields must be filled."
+                     [tooltipDisabled]="false"
+                     [tooltipAnimation]="true"
+                     tooltipPlacement="left">
+                    <button class="btn-create-edit-details" [disabled]="!form.valid" (click)="submitPe()">Submit</button>
+                </div>
+                <div *ngIf="form.valid" class="tooltip-wrapper">
+                    <button class="btn-create-edit-details" [disabled]="!form.valid" (click)="submitPe()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+

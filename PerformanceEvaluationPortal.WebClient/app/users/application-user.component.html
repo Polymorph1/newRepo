@@ -1,0 +1,84 @@
+﻿<!--<div class="container" [@animateIn]="'in'">
+    <br />
+    <div *ngIf="users" class="col-md-10 col-md-offset-1">
+        <div>
+            <input class="form-control" type="text" #myInput placeholder="Search user..." [(ngModel)]="name" (input)="filterItem(myInput.value)">
+        </div>
+        <br />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Job Title</th>
+                    <th>Job Position</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of filteredUsers">
+                    <td><a (click)="goToDetail(user)">{{user.firstName}} {{user.lastName}}</a></td>
+                    <td>{{user.jobTitle.name}}</td>
+                    <td>{{user.jobPosition.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>-->
+
+<div class="container" [@animateIn]="'in'">
+    <br />
+    <div *ngIf="users"  class="col-md-10 col-md-offset-1">
+        <div>
+            <input class="form-control" type="text" #myInput placeholder="Search user..." [(ngModel)]="name" (input)="filterItem(myInput.value)" id="asd">
+        </div>
+        <br />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Job Title</th>
+                    <th>Job Position</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let user of filteredUsers |  paginate: 
+                         {itemsPerPage: 3, currentPage: page};">
+                    <td><a (click)="goToDetail(user)">{{user.firstName}} {{user.lastName}}</a></td>
+                    <td>{{user.jobTitle.name}}</td>
+                    <td>{{user.jobPosition.name}}</td>
+                </tr>
+               
+            </tbody>                              
+        </table> 
+        <pagination-template #p="paginationApi" (pageChange)="onPageChange($event)">
+            <div class="text-center">
+                <ul class="pagination" role="navigation" aria-label="Pagination">
+
+                    <li [class.disabled]="p.isFirstPage()">
+                        <a (click)="p.previous()" aria-label="Previous">Previous<span aria-hidden="true"></span></a>
+                    </li>
+
+
+                    <li *ngFor="let page of p.pages" [class.active]="p.getCurrent() === page.value">
+                        <a (click)="p.setCurrent(page.value)">{{page.value}}</a>
+                    </li>
+                    <li [class.disabled]="p.isLastPage() ">
+                        <a (click)="p.next()" aria-label="Next">Next<span aria-hidden="true"></span></a>
+                    </li>
+
+                </ul>
+            </div>
+        </pagination-template>       
+    </div>
+</div>
+
+<style>
+    input::-webkit-input-placeholder {
+        color: white;       
+    }
+
+</style>
+
+
+
+
+

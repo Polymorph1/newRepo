@@ -1,0 +1,504 @@
+/* custom CSS */
+body {
+    background-color: #faf9f8;
+}
+
+html, body {
+    height: 100vh;
+}
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100% 0;
+    }
+}
+
+.login-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #faf9f8;
+    /*background-image: url('https://s-media-cache-ak0.pinimg.com/originals/a2/1d/bf/a21dbf1494f81a82854467734671388f.jpg');
+    background-position: bottom;
+    background-repeat:no-repeat;
+    background-size: cover;*/
+    /*overflow-y: scroll;
+    overflow-x: hidden;*/
+}
+
+.login-form-container {
+    padding: 20px;
+    background: rgba(255,255,255, 0.95);
+    border-top: 5px solid #b1cd01;
+    border-radius: 6px;
+    box-shadow: 5px 5px 20px #888888;
+    vertical-align: middle;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.col-centered {
+    display: inline-block;
+    float: none;
+    /* reset the text-align */
+    text-align: left;
+    /* inline-block space fix */
+    margin-right: -4px;
+}
+
+.well,
+div.list-group-item.active,
+div.list-group-item.active:hover,
+div.list-group-item.active:focus {
+    background-color: #001011;
+    border: 1px solid #001011;
+    color: white;
+}
+
+.list-group {
+    margin-bottom: 50px;
+}
+
+.list-group-item {
+    background-color: white;
+    border: 1px double #ced0ce;
+}
+
+.wellcome-user {
+    line-height: 3.4;
+    color: grey;
+    font-size: 14px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: grey;
+    font-size: 14px;
+}
+
+.navbar-inverse .navbar-nav > li:not(.dropdown-item):hover {
+    border-bottom: 5px solid #b1cd01;
+    color: #b1cd01;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #b1cd01;
+}
+
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #b1cd01;
+}
+
+.navbar-inverse .navbar-nav > li > a > span:hover {
+    border-bottom: none;
+}
+
+.navbar-custom {
+    color: #515254;
+    background-color: white;
+}
+
+.navbar-inverse {
+    border-color: whitesmoke;
+    box-shadow: 0 4px 2px -2px lightgrey;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover {
+    background-color: white;
+    color: grey;
+}
+
+.badge {
+    color: white;
+    background-color: #b1cd01;
+}
+
+.brand {
+    position: absolute;
+    left: 50%;
+    margin-left: -50px !important; /* 50% of your logo width */
+    display: block;
+}
+
+.btn-back {
+    float: left;
+    width: 95px;
+    height: 35px;
+    color: #515254;
+    background-color: transparent;
+    border: none;
+}
+
+.btn-back:hover {
+    color: #b1cd01;
+    background-color: #fbfafa;
+    border-radius: 6px;
+    border: solid 1px;
+}
+
+.btn-login,
+.btn-create-edit-details {
+    position: relative;
+    color: white;
+    border: solid 1px;
+    border-radius: 6px;
+    background-color: #b1cd01;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.btn-login {
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn-create-edit-details, .btn-save {
+    width: 110px;
+    height: 35px;
+}
+
+.bt-save {
+    position: relative;
+    border: solid 1px;
+    border-radius: 6px;
+}
+
+.btn-login:hover,
+.btn-create-edit-details:hover:not(:disabled) {
+    background-color: #fbfafa;
+    color: #b1cd01;
+}
+
+.btn-create-edit-details:disabled {
+    background-color: #e2eca2;
+}
+
+.btn-save:hover {
+    background-color: #faf9f8;
+}
+
+.pe-title {
+    position: center;
+    text-align: center;
+}
+
+.container {
+    margin-top: 90px;
+}
+
+.bottom-border-active {
+    border-bottom: 5px solid #b1cd01;
+}
+
+.bottom-border-active:hover {
+    border: none;
+}
+
+.list-group-history {
+    height: 400px;
+    width: 100%;
+    overflow: auto;
+    /*border-bottom: 1px solid lightgrey;
+    border-radius: 5px;*/
+}
+
+.ng-valid[required], .ng-valid.required {
+    /* green */
+    box-shadow: 0 0 5px #42A948;
+}
+
+.ng-pristine[required] {
+    box-shadow: none;
+}
+
+.tooltip-wrapper {
+    display: inline-block; /* display: block works as well */
+    margin: 10px; /* make some space so the tooltip is visible */
+}
+
+    .tooltip-wrapper .btn[disabled] {
+        /* don't let button block mouse events from reaching wrapper */
+        pointer-events: none;
+    }
+
+    .tooltip-wrapper.disabled {
+        /* OPTIONAL pointer-events setting above blocks cursor setting, so set it here */
+        cursor: not-allowed;
+    }
+
+.pe-details {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.pe-details-title {
+    font-size: 18px;
+    color: grey;
+    font-weight: 200;
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+
+.pe-center-align {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 70px;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-top-40 {
+    margin-top: 40px;
+}
+
+.margin-top-50 {
+    margin-top: 50px;
+}
+
+.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+
+.margin-top-100 {
+    margin-top: 100px;
+}
+
+.margin-top-250 {
+    margin-top: 250px;
+}
+
+.font-lato {
+    font-family: 'Lato', sans-serif;
+}
+
+.grey-lato {
+    font-family: 'Lato', sans-serif;
+    color: grey;
+}
+
+.font-size-14 {
+    font-size: 16px;
+}
+
+.table-custom > tbody > tr > td {
+    width: 50%;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+    /* style icon */
+    .inner-addon .glyphicon {
+        position: absolute;
+        padding: 10px;
+        pointer-events: none;
+    }
+
+/* align icon */
+.left-addon .glyphicon {
+    left: 0px;
+}
+
+.right-addon .glyphicon {
+    right: 0px;
+}
+
+/* add padding  */
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+.border-bottom-login-heading {
+    padding-bottom: 5px;
+    border-top: 1px solid #ced0ce;
+}
+
+input#iconifield {
+    width: 96%;
+}
+
+#asd {
+    background-color: #C1D72E;
+    color: white;
+}
+
+.my-pagination .ng2-pagination .current {
+    background: #C1D72E;
+}
+
+
+/*Loading Page*/
+#loading {
+    background: #f4f4f2 url("img/page-bg.png") repeat scroll 0 0;
+    height: 100%;
+    left: 0;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.bokeh {
+    border: 0.01em solid rgba(150, 150, 150, 0.1);
+    border-radius: 50%;
+    font-size: 100px;
+    height: 1em;
+    list-style: outside none none;
+    margin: 0 auto;
+    position: relative;
+    top: 35%;
+    width: 1em;
+    z-index: 2147483647;
+}
+
+    .bokeh li {
+        border-radius: 50%;
+        height: 0.2em;
+        position: absolute;
+        width: 0.2em;
+    }
+
+        .bokeh li:nth-child(1) {
+            animation: 1.13s linear 0s normal none infinite running rota, 3.67s ease-in-out 0s alternate none infinite running opa;
+            background: #b1cd01 none repeat scroll 0 0;
+            left: 50%;
+            margin: 0 0 0 -0.1em;
+            top: 0;
+            transform-origin: 50% 250% 0;
+        }
+
+        .bokeh li:nth-child(2) {
+            animation: 1.86s linear 0s normal none infinite running rota, 4.29s ease-in-out 0s alternate none infinite running opa;
+            background: #cc3f0c none repeat scroll 0 0;
+            margin: -0.1em 0 0;
+            right: 0;
+            top: 50%;
+            transform-origin: -150% 50% 0;
+        }
+
+        .bokeh li:nth-child(3) {
+            animation: 1.45s linear 0s normal none infinite running rota, 5.12s ease-in-out 0s alternate none infinite running opa;
+            background: #001011 none repeat scroll 0 0;
+            bottom: 0;
+            left: 50%;
+            margin: 0 0 0 -0.1em;
+            transform-origin: 50% -150% 0;
+        }
+
+        .bokeh li:nth-child(4) {
+            animation: 1.72s linear 0s normal none infinite running rota, 5.25s ease-in-out 0s alternate none infinite running opa;
+            background: #88c100 none repeat scroll 0 0;
+            margin: -0.1em 0 0;
+            top: 50%;
+            transform-origin: 250% 50% 0;
+        }
+
+@keyframes opa {
+    12% {
+        opacity: 0.8;
+    }
+
+    19.5% {
+        opacity: 0.88;
+    }
+
+    37.2% {
+        opacity: 0.64;
+    }
+
+    40.5% {
+        opacity: 0.52;
+    }
+
+    52.7% {
+        opacity: 0.69;
+    }
+
+    60.2% {
+        opacity: 0.6;
+    }
+
+    66.6% {
+        opacity: 0.52;
+    }
+
+    70% {
+        opacity: 0.63;
+    }
+
+    79.9% {
+        opacity: 0.6;
+    }
+
+    84.2% {
+        opacity: 0.75;
+    }
+
+    91% {
+        opacity: 0.87;
+    }
+}
+
+@keyframes rota {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.dropdown ul.dropdown-menu {
+    border-radius:4px;
+    box-shadow:none;
+    margin-top:20px;
+    width:300px;
+}
+
+.dropdown ul.dropdown-menu:before {
+    content: "";
+    border-bottom: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    z-index: 10;
+}
+
+.dropdown ul.dropdown-menu:after {
+    content: "";
+    border-bottom: 12px solid #ccc;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    position: absolute;
+    top: -12px;
+    right: 14px;
+    z-index: 9;
+}
+
+.circle {
+    border-radius: 50%;
+	width: 200px;
+	height: 200px; 
+	/* width and height can be anything, as long as they're equal */
+}
+
+/*list-group-item.div:nth-child(n+3) {
+    display:none;
+}*/

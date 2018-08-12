@@ -1,0 +1,64 @@
+﻿<div class="container" [@animateIn]="'in'">
+    <div *ngIf="user" class="col-md-8 col-md-offset-2">
+        <h2 class="col-md-offset-2">Details of <strong>{{user.firstName}} {{user.lastName}}</strong></h2>
+        <br />
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">First Name</label>
+                <div class="col-sm-5">
+                    <p class="help-block">{{user.firstName}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Last Name</label>
+                <div class="col-sm-5">
+                    <p class="help-block">{{user.lastName}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Job Title</label>
+                <div class="col-sm-5">
+                    <p class="help-block">{{user.jobTitle.name}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Job Position</label>
+                <div class="col-sm-5">
+                    <p class="help-block">{{user.jobPosition.name}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Manager</label>
+                <div class="col-sm-5">
+                    <p class="help-block">{{user.manager==null?" ":user.manager.firstName}} {{user.manager==null?" ":user.manager.lastName}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Reviewer</label>
+                <div class="col-sm-5">
+                    <p class="help-block">{{user.reviewer==null?" ":user.reviewer.firstName}} {{user.reviewer==null?" ":user.reviewer.lastName}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Template</label>
+                <div class="col-sm-5">
+                    <p class="help-block">{{user.template==null?" ":user.template.name}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-10">
+                    <button class="btn btn-default btn-back" (click)="goBack()">
+                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                        Back
+                    </button>
+                    <button class="btn btn-default col-md-offset-1" (click)="saveUser(user)">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        Edit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

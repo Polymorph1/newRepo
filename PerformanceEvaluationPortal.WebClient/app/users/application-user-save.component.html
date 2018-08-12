@@ -1,0 +1,162 @@
+﻿
+<div class="container">
+    <h2 *ngIf="user" class="col-md-offset-4">Edit user <strong>{{userToEdit}}</strong></h2>
+    <br />
+    <!--(ngSubmit)="onSubmit()"-->
+    <form  #userForm="ngForm" class="col-md-12 col-md-pull-1">
+
+        <div class="form-group col-sm-7 col-sm-offset-4">
+            <div><label class="col-sm-3 control-label">First Name</label></div>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="firstname"
+                       required
+                       [(ngModel)]="user.firstName" name="firstname"
+                       #firstname="ngModel" placeholder="Firstname"
+                       (input)="validName(user.firstName)" />
+
+                <div [hidden]="firstname.valid || firstname.pristine"
+                     class="alert alert-danger">
+                    First name is required
+                </div>
+
+                <div [hidden]="validFirst"
+                     class="alert alert-danger">
+                    First name can have only letters
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-7 col-sm-offset-4">
+            <label class="col-sm-3 control-label">Last Name</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="lastname"
+                       required
+                       [(ngModel)]="user.lastName" name="lastname"
+                       #lastname="ngModel" placeholder="Lastname"
+                       (input)="validLastName(user.lastName)">
+                <div [hidden]="lastname.valid || lastname.pristine"
+                     class="alert alert-danger">
+                    Last name is required
+                </div>
+                <div [hidden]="validLast"
+                     class="alert alert-danger">
+                    Last name can have only letters
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-7 col-sm-offset-4 ">
+            <label class="col-sm-3 control-label">Manager</label>
+            <div class="col-sm-5">
+                <select class="form-control" [(ngModel)]="user.managerId" id="manager" name="manager">
+                    <option *ngFor="let manager of managers" [value]="manager.id">{{manager.firstName}}  {{manager.lastName}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div *ngIf="!user.managerId" class="form-group col-sm-7 col-sm-offset-4 ">
+            <label class="col-sm-3 control-label">Reviewer</label>
+            <div class="col-sm-5">
+                <select class="form-control" [(ngModel)]="user.reviewerId" id="reviewer" #reviewer="ngModel" name="reviewer">
+                    <option *ngFor="let reviewer of reviewers" [value]="reviewer.id">{{reviewer.firstName}}  {{reviewer.lastName}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div *ngIf="user.managerId" class="form-group col-sm-7 col-sm-offset-4 ">
+            <label class="col-sm-3 control-label">Reviewer</label>
+            <div class="col-sm-5">
+                <select class="form-control" [(ngModel)]="user.reviewerId" id="reviewer" #reviewer="ngModel" name="reviewer" required>
+                    <option *ngFor="let reviewer of reviewers" [value]="reviewer.id">{{reviewer.firstName}}  {{reviewer.lastName}}</option>
+                </select>
+                <div [hidden]="reviewer.valid" class="alert alert-danger">
+                    Reviewer is required
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group col-sm-7 col-sm-offset-4">
+            <label class="col-sm-3 control-label">Job Title</label>
+            <div class="col-sm-5">
+                <select class="form-control" [(ngModel)]="user.jobTitleId" name="jobtitle"
+                        #jobtitle="ngModel" required>
+                    <option *ngFor="let title of titles" [value]="title.id">{{title.name}}</option>
+                </select>
+                <div [hidden]="jobtitle.valid || jobtitle.pristine" class="alert alert-danger">
+                    Job title is required
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-7 col-sm-offset-4">
+            <label class="col-sm-3 control-label">Job Position</label>
+            <div class="col-sm-5">
+                <select class="form-control" [(ngModel)]="user.jobPositionId" name="jobposition"
+                        #jobposition="ngModel" required>
+                    <option *ngFor="let position  of positions" [value]="position.id">{{position.name}}</option>
+                </select>
+                <div [hidden]="jobposition.valid || jobposition.pristine" class="alert alert-danger">
+                    Job position is required
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="user.managerId" class="form-group col-sm-7 col-sm-offset-4">
+            <label class="col-sm-3 control-label">Template</label>
+            <div class="col-sm-5">
+                <select class="form-control" [(ngModel)]="user.templateId" id="template" #template="ngModel" name="template" required>
+                    <option *ngFor="let template of templates" [value]="template.id">{{template.name}}</option>
+                </select>
+                <div [hidden]="template.valid" class="alert alert-danger">
+                    Template is required
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!user.managerId" class="form-group col-sm-7 col-sm-offset-4">
+            <label class="col-sm-3 control-label">Template</label>
+            <div class="col-sm-5">
+                <select class="form-control" [(ngModel)]="user.templateId" id="template" #template="ngModel" name="template">
+                    <option *ngFor="let template of templates" [value]="template.id">{{template.name}}</option>
+                </select>
+
+            </div>
+        </div>
+
+        <br />
+      
+            <div *ngIf="!userForm.form.valid || !validFirst || !validLast" class="tooltip-wrapper col-md-2 col-md-offset-7 col-md-push-7"
+                 tooltip="All fields must be filled."
+                 [tooltipDisabled]="false"
+                 [tooltipAnimation]="true"
+                 tooltipPlacement="centar">
+                <button  type="submit" class="btn btn-default col-md-8" (click)="onSubmit()" [disabled]="!userForm.form.valid || !validFirst || !validLast">
+                    <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>Save
+                </button>
+            </div>
+            
+        
+        <div *ngIf="userForm.form.valid && validFirst && validLast" class="tooltip-wrapper col-md-2 col-md-offset-7 col-md-push-7">
+            <button type="submit" class="btn btn-default col-md-8" (click)="onSubmit()" [disabled]="!userForm.form.valid || !validFirst || !validLast">
+                <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>Save
+            </button>
+        </div>
+        <div class="tooltip-wrapper col-md-2 col-md-push-3">
+            <button class="btn btn-default col-md-7 " (click)="goBack()">
+                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                Back
+            </button>
+        </div>
+    </form>
+
+    <!--<div class="tooltip-wrapper col-md-pull-9">
+        <button class="btn btn-default col-md-5 " (click)="goBack()">
+            <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+            Back
+        </button>
+    </div>-->
+
+</div>
+
+
+
